@@ -1,0 +1,8 @@
+SELECT m.title, m.year, a.name, 'Actor' AS Role 
+FROM dbmaster.actors AS a, dbmaster.movies AS m, dbmaster.movies2actors AS ma 
+WHERE ma.movieid=m.movieid AND ma.actorid=a.actorid 
+UNION 
+SELECT m.title, m.year, d.name, 'Director'
+FROM dbmaster.directors AS d, dbmaster.movies AS m, dbmaster.movies2directors AS md 
+WHERE md.movieid=m.movieid AND md.directorid=d.directorid 
+ORDER BY title DESC

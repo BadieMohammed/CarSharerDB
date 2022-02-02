@@ -1,0 +1,6 @@
+SELECT AVG(AM)  AS AMOUNT 
+FROM ((SELECT movieid, COUNT(actorid) AS AM 
+FROM dbmaster.movies2actors
+GROUP BY movieid)
+AS i JOIN dbmaster.genres AS g ON i.movieid=g.movieid)
+WHERE genre='Action'

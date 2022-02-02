@@ -1,0 +1,4 @@
+SELECT d.name FROM dbmaster.directors AS d, dbmaster.movies2directors AS md, dbmaster.movies AS m 
+WHERE m.movieid=md.movieid AND 
+d.directorid=md.directorid AND
+m.year>1950 AND m.year<1960

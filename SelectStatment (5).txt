@@ -1,0 +1,6 @@
+SELECT d.name AS NAME FROM 
+dbmaster.writers as d, dbmaster.movies2writers as mw, dbmaster.movies2actors as ma, dbmaster.actors as a 
+WHERE d.writerid=mw.writerid 
+AND mw.movieid=ma.movieid 
+AND ma.actorid=a.actorid 
+AND a.name=d.name

@@ -1,0 +1,3 @@
+SELECT title, amount FROM
+(SELECT count(actorid) AS amount, movieid from dbmaster.movies2actors GROUP BY movieid) AS a 
+JOIN dbmaster.movies AS m ON a.movieid=m.movieid WHERE amount=(select max(a.jam) as maxjam from (select count(actorid) as jam, movieid from dbmaster.movies2actors group by movieid) as a)

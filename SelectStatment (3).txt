@@ -1,0 +1,7 @@
+SELECT name, avg(gross) AS mean_gross 
+from dbmaster.movies AS m, dbmaster.directors AS d, dbmaster.movies2directors AS md 
+WHERE
+m.movieid=md.movieid AND
+md.directorid=d.directorid 
+GROUP BY name 
+ORDER BY mean_gross desc

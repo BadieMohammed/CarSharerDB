@@ -1,0 +1,2 @@
+SELECT language, COUNT(movieid)AS MOVIES_PER_LANGUAGE, COUNT(movieid)*1.0/100,'%' AS MARKET_SHARE
+FROM dbmaster.languages GROUP BY language WHERE MOVIES_PER_LANGUAGE*1.0/_*100>1
